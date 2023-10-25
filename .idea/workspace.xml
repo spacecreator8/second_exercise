@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c452aca5-9d63-4e30-b3a4-c8961a5e8245" name="Changes" comment="Второй проект">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/the_site/b1/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/the_site/b1/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/the_site/the_site/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/the_site/the_site/settings.py" afterDir="false" />
-    </list>
+    <list default="true" id="c452aca5-9d63-4e30-b3a4-c8961a5e8245" name="Changes" comment="Сделал БД" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -92,11 +87,20 @@
       <option name="project" value="LOCAL" />
       <updated>1698128673360</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Сделал БД">
+      <option name="closed" value="true" />
+      <created>1698206029633</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1698206029633</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Второй проект" />
-    <option name="LAST_COMMIT_MESSAGE" value="Второй проект" />
+    <MESSAGE value="Сделал БД" />
+    <option name="LAST_COMMIT_MESSAGE" value="Сделал БД" />
   </component>
 </project>

@@ -10,6 +10,13 @@
 <body>
     <nav>
         {% block navigation %}
+            {% if user.is_authenticated %}
+                <div><a href="{% url 'logout' %}">Logout</a></div>
+                <div><a href="{% url 'personal_account' %}">Personal account</a></div>
+            {% else %}
+                <div><a href="{% url 'login' %}">Login</a></div>
+                <div><a href="{% url 'registration' %}">Register</a></div>
+            {% endif %}
         {% endblock %}
     </nav>
     <div class="main_container">

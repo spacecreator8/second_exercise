@@ -1,5 +1,23 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>{{ user.username }} вы успешно авторизовались.</h1>
+   <h1>Здравствуйте {{ user.username }}.</h1>
+   <p></p>
+   <p></p>
+
+{% if applications %}
+    {% for i in applications %}
+        <ul>
+        <li>{{ i.name }}</li>
+        <li>{{ i.description }}</li>
+        <li>{{ i.category }}</li>
+        <li>{{ i.photo }}</li>
+        <li>{{ i.status }}</li>
+        <li>{{ i.date_creation }}</li>
+        </ul>
+        <hr>
+    {% endfor %}
+    {% else %}
+    Пусто
+    {% endif %}
 {% endblock %}

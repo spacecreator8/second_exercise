@@ -13,7 +13,6 @@ class User(AbstractUser):
     password = models.CharField(max_length=254, verbose_name='Пароль', blank=False)
     agreement = models.BooleanField(verbose_name='Согласие на обработку персоональных данных', blank=False,
                                     default=True)
-    date_execution = models.DateTimeField(auto_now_add=True, null=True)
     applications = models.ForeignKey('Application', on_delete=models.CASCADE, verbose_name='Заявки', null=True,
                                      related_name='user', blank=True)
 
@@ -44,6 +43,7 @@ class Application(models.Model):
     ]
 
     status = models.CharField(max_length=254, verbose_name='Статус', choices=STATUS_CHOISE, default='Accepted')
+    date_creation = models.DateTimeField(auto_now_add=True, null=True)
     suggestions = models.ForeignKey('Realization', on_delete=models.CASCADE, verbose_name='Предложения реализации',
                                     blank=True, null=True)
 

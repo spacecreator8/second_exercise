@@ -31,7 +31,8 @@ def registrationView(request):
 
 
 def loginSuccessView(request):
-    return render(request, 'registration/enter_success.html')
+    applications = Application.objects.filter(user__username = request.user.username)
+    return render(request, 'registration/enter_success.html', {'applications':applications})
 
 
 # def registrationView(request):

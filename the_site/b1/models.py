@@ -44,7 +44,7 @@ class Application(models.Model):
 
     status = models.CharField(max_length=254, verbose_name='Статус', choices=STATUS_CHOISE, default='Accepted')
     date_creation = models.DateTimeField(auto_now_add=True, null=True)
-    username = models.CharField(max_length=254, verbose_name='Логин', unique=True, blank=True, null=True)
+    username = models.CharField(max_length=254, verbose_name='Логин', blank=True, null=True)
     suggestions = models.ForeignKey('Realization', on_delete=models.CASCADE, verbose_name='Предложения реализации',
                                     blank=True, null=True)
 

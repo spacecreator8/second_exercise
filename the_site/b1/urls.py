@@ -12,5 +12,6 @@ urlpatterns = [
     path('accounts/profile/', loginSuccessView, name='loginSuccess'),
     path('create_application', CreateApplication.as_view(), name='createApplication'),
     path('create_application/success', createApplSuccess, name='createApplSuccess'),
+    path('accounts/profile/delete-application/<int:del_pk>', deleteApplicationView, name='deleteApplication')
 
 ]

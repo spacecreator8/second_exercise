@@ -13,7 +13,7 @@
             {% if user.is_authenticated %}
                 <div><a href="{% url 'logout' %}">Выйти</a></div>
                 <div><a href="{% url 'personal_account' %}">Личный кабинет</a></div>
-                <div><a href="{% url 'createApplication' %}">Сделать заказ</a></div>
+                <div><a href="{% url 'createApplication' %}">Сделать заявку</a></div>
                 <div><a href="{% url 'loginSuccess' %}">Мои заявки</a></div>
             {% else %}
                 <div><a href="{% url 'login' %}">Войти</a></div>

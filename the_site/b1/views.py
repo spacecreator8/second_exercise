@@ -3,11 +3,12 @@ import uuid
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.urls import reverse, reverse_lazy
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, DeleteView
 from django.contrib.auth.views import LoginView, LogoutView, RedirectURLMixin
 from django.contrib.auth import login, authenticate
 from .models import User
 from .forms import *
+from django.shortcuts import get_object_or_404
 
 
 def index(request):
@@ -73,3 +74,12 @@ class CreateApplication(CreateView):
 
 def createApplSuccess(request):
     return render(request, 'b1/application_created.html')
+
+
+def deleteApplicationView(request, del_pk):
+    Application.objects.delete(pk=del_pk)
+    return redirect('loginSuccess')
+
+
+
+

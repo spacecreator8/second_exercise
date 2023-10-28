@@ -12,7 +12,7 @@
 }
 
 body{
-    background-color:rgb(247, 233, 115);
+    background-color: rgb(192, 247, 115);
     font-size:100px;
 }
 
@@ -24,7 +24,7 @@ nav{
     display:flex;
     justify-content: left;
 
-    background-color:rgb(196, 172, 65);
+    background-color: rgb(144, 196, 65);
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
 }
@@ -56,6 +56,6 @@ nav>div:nth-child(1){
 }
 
 .alert{
-    color: 'red';
+    color: #da4747;
     font-size: 44px;
 }

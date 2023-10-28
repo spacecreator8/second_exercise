@@ -6,6 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="c452aca5-9d63-4e30-b3a4-c8961a5e8245" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/the_site/b1/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/the_site/b1/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/the_site/b1/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/the_site/b1/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/the_site/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/the_site/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/the_site/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/the_site/static/css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,6 +90,8 @@
       <option name="presentableId" value="Default" />
       <updated>1698059078889</updated>
       <workItem from="1698372077447" duration="15775000" />
+      <workItem from="1698456591796" duration="4193000" />
+      <workItem from="1698460808088" duration="305000" />
     </task>
     <task id="LOCAL-00001" summary="Второй проект">
       <option name="closed" value="true" />
@@ -135,7 +141,23 @@
       <option name="project" value="LOCAL" />
       <updated>1698389385065</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Надо сделать автоматическое связывание заявки с тем кто эту заявку сделал">
+      <option name="closed" value="true" />
+      <created>1698456626675</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1698456626675</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Надо сделать автоматическое связывание заявки с тем кто эту заявку сделал">
+      <option name="closed" value="true" />
+      <created>1698456882242</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1698456882242</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

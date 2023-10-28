@@ -1,3 +1,5 @@
+import uuid
+
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.urls import reverse, reverse_lazy
@@ -31,7 +33,7 @@ def registrationView(request):
 
 
 def loginSuccessView(request):
-    applications = Application.objects.filter(user__username = request.user.username)
+    applications = Application.objects.filter(username = request.user.username)
     return render(request, 'registration/enter_success.html', {'applications':applications})
 
 
@@ -64,6 +66,10 @@ class CreateApplication(CreateView):
     form_class = ApplicationForm
     template_name = 'b1/create_application.html'
     success_url = 'create_application/success'
+
+    def form_valid(self, form):
+        form.instance.username = self.request.user
+        return super().form_valid(form)
 
 def createApplSuccess(request):
     return render(request, 'b1/application_created.html')

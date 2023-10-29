@@ -3,7 +3,8 @@ import uuid
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.urls import reverse, reverse_lazy
-from django.views.generic.edit import CreateView, DeleteView
+from django.views.generic import ListView
+from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.contrib.auth.views import LoginView, LogoutView, RedirectURLMixin
 from django.contrib.auth import login, authenticate
 from .models import User
@@ -34,8 +35,8 @@ def registrationView(request):
 
 
 def loginSuccessView(request):
-    applications = Application.objects.filter(username = request.user.username)
-    return render(request, 'registration/enter_success.html', {'applications':applications})
+    applications = Application.objects.filter(username=request.user.username)
+    return render(request, 'registration/enter_success.html', {'applications': applications})
 
 
 # def registrationView(request):
@@ -59,8 +60,7 @@ def loginSuccessView(request):
 #     form_class = RegistrationForm
 #     success_url = '/login'
 
-def personal_account(request):
-    return render(request, 'b1/personal_account.html')
+
 
 
 class CreateApplication(CreateView):
@@ -72,13 +72,56 @@ class CreateApplication(CreateView):
         form.instance.username = self.request.user
         return super().form_valid(form)
 
+
 def createApplSuccess(request):
     return render(request, 'b1/application_created.html')
 
 
+# def deleteApplicationView(request, del_pk):
+#     object = Application.objects.get(pk=del_pk)
+#     object.delete()
+#     return redirect('loginSuccess')
+
 def deleteApplicationView(request, del_pk):
-    Application.objects.delete(pk=del_pk)
-    return redirect('loginSuccess')
+    object = Application.objects.get(pk=del_pk)
+    if request.method == 'POST':
+        form = DoYouWantDel(request.POST)
+        if form.is_valid():
+            if (form.cleaned_data.get('sure') == 'yes'):
+                object.delete()
+                return redirect('loginSuccess')
+            else:
+                return redirect('loginSuccess')
+    else:
+        form = DoYouWantDel()
+        return render(request, 'b1/are_you_sure.html', {'form': form, 'object':object})
+
+
+class ApplicationProcessingList(ListView):
+    model = Application
+    queryset = Application.objects.order_by('-date_creation')
+    context_object_name = 'list'
+    template_name = 'b1/list_applications.html'
+    paginate_by = 10
+
+
+class ApplicationProcessingView(UpdateView):
+    model = Application
+    form_class = ApplProcessingForm
+    success_url = '/appl_processing/'
+    template_name = 'b1/processing.html'
+
+    def get_object(self):
+        post_id = self.kwargs.get('int_pk')
+        obj = get_object_or_404(Application, id=post_id)
+        return obj
+
+
+
+
+
+
+
 
 
 

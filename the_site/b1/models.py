@@ -38,11 +38,12 @@ class Application(models.Model):
                               validators=[FileExtensionValidator(allowed_extensions=['png', 'jpg', 'jpeg'])])
 
     STATUS_CHOISE = [
+        ('New', 'Новая'),
         ('Accepted', 'Принято в работу'),
         ('Finished', 'Выполнено')
     ]
 
-    status = models.CharField(max_length=254, verbose_name='Статус', choices=STATUS_CHOISE, default='Accepted')
+    status = models.CharField(max_length=254, verbose_name='Статус', choices=STATUS_CHOISE, default='New')
     date_creation = models.DateTimeField(auto_now_add=True, null=True)
     username = models.CharField(max_length=254, verbose_name='Логин', blank=True, null=True)
     suggestions = models.ForeignKey('Realization', on_delete=models.CASCADE, verbose_name='Предложения реализации',

@@ -11,13 +11,18 @@
     <nav>
         {% block navigation %}
             {% if user.is_authenticated %}
-                <div><a href="{% url 'logout' %}">Выйти</a></div>
-                <div><a href="{% url 'personal_account' %}">Личный кабинет</a></div>
+                <div class="user-name">{{ user.username }}</div>
+                <div><a href="{% url 'home' %}">Главная</a></div>
                 <div><a href="{% url 'createApplication' %}">Сделать заявку</a></div>
                 <div><a href="{% url 'loginSuccess' %}">Мои заявки</a></div>
+                {% if user.is_superuser %}
+                    <div><a href="{% url 'apllication_processing' %}">Работа с заявками</a></div>
+                {% endif %}
+                <div><a href="{% url 'logout' %}">Выйти</a></div>
             {% else %}
-                <div><a href="{% url 'login' %}">Войти</a></div>
+                <div><a href="{% url 'home' %}">Главная</a></div>
                 <div><a href="{% url 'registration' %}">Зарегистрироваться</a></div>
+                <div><a href="{% url 'login' %}">Войти</a></div>
             {% endif %}
         {% endblock %}
     </nav>

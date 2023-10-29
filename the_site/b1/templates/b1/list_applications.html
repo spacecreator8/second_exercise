@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+    <div class="application-header">
+        <div>Дата заявки</div>
+        <div>Имя пользователя</div>
+        <div>Статус заявки</div>
+        <div>Предложения</div>
+    </div>
+
+    {% for i in list %}
+        <div class="application-body">
+            <div class="data-generating">{{ i.date_creation }}</div>
+            <div class="data-generating">{{i.username }}</div>
+            <div class="data-generating">{{ i.status }}</div>
+            <div class="data-generating">{{ i.suggestions }}</div>
+        </div>
+        <p class="submit_p"><a href="{% url 'processing' i.pk %}">Обработать заявку</a></p>
+        <hr>
+    {% endfor %}
+{% endblock %}

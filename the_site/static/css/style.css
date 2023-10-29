@@ -46,16 +46,39 @@ nav>div:nth-child(1){
     margin: 100px auto 30px;
     background-color: rgb(255, 246, 235);
     border-radius: 10px;
-    border-right: 4px solid rgb(82, 70, 1);
-    border-bottom: 4px solid rgb(80, 82, 1);
 
     font-family: 'Barlow', sans-serif;
     font-weight: 400;
 
-    padding:20px;
+    padding:20px 50px;
 }
 
 .alert{
     color: #da4747;
     font-size: 44px;
+}
+
+.user-name{
+    color: white;
+    font-size: 44px;
+    padding-right:100px;
+}
+.application-header{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 100px;
+}
+.application-header > div:first-child{
+    margin-left: 50px;
+}
+.application-body{
+    display: flex;
+    justify-content: space-evenly;
+}
+.data-generating{
+    color: #00BFFF;
+}
+.submit_p{
+    position:relative;
+    top: -32px;
 }

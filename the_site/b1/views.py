@@ -13,7 +13,9 @@ from django.shortcuts import get_object_or_404
 
 
 def index(request):
-    return render(request, 'index.html')
+    last4 = Application.objects.order_by('-date_creation').filter(status='Finished')[:4]
+    accepted_appl = Application.objects.filter(status='Accepted').count()
+    return render(request, 'index.html', context={'last4':last4, 'accepted_appl':accepted_appl})
 
 
 # class CustomLogoutView(RedirectURLMixin, LogoutView):

@@ -82,3 +82,12 @@ nav>div:nth-child(1){
     position:relative;
     top: -32px;
 }
+.flex-box-container-mainpage{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.flex-box-child-mainpage{
+    background-color: white;
+    border-radius: 15px;
+}

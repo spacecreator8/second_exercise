@@ -3,6 +3,17 @@
 
 
 {% block content %}
-    <h1>Пока работает.</h1>
-
+    <h1>Несколько наших последних выполненных заказов</h1>
+    <h3>Сейчас у нас заявок в работе: {{ accepted_appl }} </h3>
+    <br>
+    <div class="flex-box-container-mainpage">
+        {% for i in last4 %}
+            <div class="flex-box-child-mainpage">
+                <p>Дата создания заявки: {{ i.date_creation }}</p>
+                <p>Название заявки: {{ i.name }}</p>
+                <p>Стиль: {{ i.category }}</p>
+                <p>Проект помещения: <img src="BASE_DIR/files/{{ i.photo }}" alt='Проект помещения'></p>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}

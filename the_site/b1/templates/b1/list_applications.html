@@ -3,6 +3,11 @@
 
 
 {% block content %}
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Отсортировать</button>
+    </form>
     <div class="application-header">
         <div>Дата заявки</div>
         <div>Имя пользователя</div>
@@ -10,7 +15,7 @@
         <div>Предложения</div>
     </div>
 
-    {% for i in list %}
+    {% for i in queryset %}
         <div class="application-body">
             <div class="data-generating">{{ i.date_creation }}</div>
             <div class="data-generating">{{i.username }}</div>

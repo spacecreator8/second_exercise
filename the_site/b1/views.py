@@ -99,12 +99,28 @@ def deleteApplicationView(request, del_pk):
         return render(request, 'b1/are_you_sure.html', {'form': form, 'object':object})
 
 
-class ApplicationProcessingList(ListView):
-    model = Application
-    queryset = Application.objects.order_by('-date_creation')
-    context_object_name = 'list'
-    template_name = 'b1/list_applications.html'
-    paginate_by = 10
+# class ApplicationProcessingList(ListView):
+#     model = Application
+#     queryset = Application.objects.order_by('-date_creation')
+#     context_object_name = 'list'
+#     template_name = 'b1/list_applications.html'
+#     paginate_by = 10
+
+def applicationProcessingList(request):
+    if (request.method == 'POST'):
+        form = FilterApplicationForm(request.POST)
+        if form.is_valid():
+            status = form.cleaned_data['status']
+            if status != 'All':
+                queryset = Application.objects.filter(status=status).order_by('-date_creation')
+            else:
+                form = FilterApplicationForm()
+                queryset = Application.objects.order_by('-date_creation')
+    else:
+        form = FilterApplicationForm()
+        queryset = Application.objects.order_by('-date_creation')
+
+    return render(request, 'b1/list_applications.html', context={'form': form, 'queryset': queryset})
 
 
 class ApplicationProcessingView(UpdateView):

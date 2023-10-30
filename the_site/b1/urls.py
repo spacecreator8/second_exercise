@@ -8,7 +8,7 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(), name='logout'),
     path('registration/', registrationView, name='registration'),
     # path('registration/', registrationView.as_view(), name='registration'),
-    path('appl_processing/', ApplicationProcessingList.as_view(), name='apllication_processing'),
+    path('appl_processing/', applicationProcessingList, name='apllication_processing'),
     path('appl_processing_list/processing/<int:int_pk>', ApplicationProcessingView.as_view(), name='processing'),
 
     path('accounts/profile/', loginSuccessView, name='loginSuccess'),

@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c452aca5-9d63-4e30-b3a4-c8961a5e8245" name="Changes" comment="Сделал главную страницу, но фото не выводятся." />
+    <list default="true" id="c452aca5-9d63-4e30-b3a4-c8961a5e8245" name="Changes" comment="Сделал главную страницу, но фото не выводятся.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/the_site/b1/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/the_site/b1/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/the_site/b1/templates/b1/list_applications.html" beforeDir="false" afterPath="$PROJECT_DIR$/the_site/b1/templates/b1/list_applications.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/the_site/b1/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/the_site/b1/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/the_site/b1/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/the_site/b1/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/the_site/b1/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/the_site/b1/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/the_site/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/the_site/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/the_site/files/2KSrv_план_помещения2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/the_site/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/the_site/static/css/style.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -181,7 +191,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698641452585</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Сделал главную страницу, но фото не выводятся.">
+      <option name="closed" value="true" />
+      <created>1698641785401</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1698641785401</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

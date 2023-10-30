@@ -12,7 +12,7 @@
                 <p>Дата создания заявки: {{ i.date_creation }}</p>
                 <p>Название заявки: {{ i.name }}</p>
                 <p>Стиль: {{ i.category }}</p>
-                <p>Проект помещения: <img src="BASE_DIR/files/{{ i.photo }}" alt='Проект помещения'></p>
+                <div>Проект помещения: <img src="{{ i.photo.url }}" alt='Проект помещения'></div>
             </div>
         {% endfor %}
     </div>

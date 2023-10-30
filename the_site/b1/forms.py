@@ -1,12 +1,38 @@
 from django import forms
+from django.core.exceptions import ValidationError
+
 from .models import *
 
 
 class RegistrationForm(forms.ModelForm):
+    email = forms.EmailField()
     class Meta:
         model = User
         fields = ['name','surname','patronymic','username','email','password','agreement']
 
+    # def clean_name(self):
+    #     name = self.cleaned_data
+    #     ALLOWED_CHARS="йцукенгшщзхъэждлорпавыфячсмитьбюёЙЦУКЕНГШЩЗХЪЭЖДЛОРПАВЫФЯЧСМИТЬБЮЁ"
+    #     if not (set(name)) <= set(ALLOWED_CHARS):
+    #         raise ValidationError("В имени может быть только кириллица.")
+    #
+    #     return name
+    #
+    # def clean_surname(self):
+    #     surname = self.cleaned_data
+    #     ALLOWED_CHARS="йцукенгшщзхъэждлорпавыфячсмитьбюёЙЦУКЕНГШЩЗХЪЭЖДЛОРПАВЫФЯЧСМИТЬБЮЁ"
+    #     if not (set(surname)) <= set(ALLOWED_CHARS):
+    #         raise ValidationError("В имени может быть только кириллица.")
+    #
+    #     return surname
+    #
+    # def clean_patronymic(self):
+    #     patronymic = self.cleaned_data
+    #     ALLOWED_CHARS="йцукенгшщзхъэждлорпавыфячсмитьбюёЙЦУКЕНГШЩЗХЪЭЖДЛОРПАВЫФЯЧСМИТЬБЮЁ"
+    #     if not (set(patronymic)) <= set(ALLOWED_CHARS):
+    #         raise ValidationError("В имени может быть только кириллица.")
+    #
+    #     return patronymic
 
 class ApplicationForm(forms.ModelForm):
     class Meta:
@@ -44,5 +70,11 @@ class ApplProcessingForm(forms.ModelForm):
         fields = ['username','name','category', 'description','photo','status','suggestions']
 
 
-
-
+STATUS_CHOISE_2 = [
+        ('New', 'Новая'),
+        ('Accepted', 'Принято в работу'),
+        ('Finished', 'Выполнено'),
+        ('All', 'Все заявки')
+    ]
+class FilterApplicationForm(forms.Form):
+    status = forms.ChoiceField(choices=STATUS_CHOISE_2, label='Выберите статус', initial='All')

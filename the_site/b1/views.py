@@ -15,7 +15,7 @@ from django.shortcuts import get_object_or_404
 def index(request):
     last4 = Application.objects.order_by('-date_creation').filter(status='Finished')[:4]
     accepted_appl = Application.objects.filter(status='Accepted').count()
-    return render(request, 'index.html', context={'last4':last4, 'accepted_appl':accepted_appl})
+    return render(request, 'index.html', context={'last4': last4, 'accepted_appl': accepted_appl})
 
 
 # class CustomLogoutView(RedirectURLMixin, LogoutView):
@@ -63,8 +63,6 @@ def loginSuccessView(request):
 #     success_url = '/login'
 
 
-
-
 class CreateApplication(CreateView):
     form_class = ApplicationForm
     template_name = 'b1/create_application.html'
@@ -96,7 +94,7 @@ def deleteApplicationView(request, del_pk):
                 return redirect('loginSuccess')
     else:
         form = DoYouWantDel()
-        return render(request, 'b1/are_you_sure.html', {'form': form, 'object':object})
+        return render(request, 'b1/are_you_sure.html', {'form': form, 'object': object})
 
 
 # class ApplicationProcessingList(ListView):
@@ -135,12 +133,7 @@ class ApplicationProcessingView(UpdateView):
         return obj
 
 
-
-
-
-
-
-
-
-
-
+class CreateRealization(CreateView):
+    form_class = CreateRealizationForm
+    template_name = 'b1/create_realization.html'
+    success_url = '/append_realization/'

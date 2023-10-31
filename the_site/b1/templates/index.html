@@ -13,6 +13,7 @@
                 <p>Название заявки: {{ i.name }}</p>
                 <p>Стиль: {{ i.category }}</p>
                 <div>Проект помещения: <img src="{{ i.photo.url }}" alt='Проект помещения'></div>
+                <div>Реализация: <img src="{{ i.suggestions.image.url }}" alt='Реализация проекта'></div>
             </div>
         {% endfor %}
     </div>

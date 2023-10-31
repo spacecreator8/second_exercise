@@ -78,3 +78,11 @@ STATUS_CHOISE_2 = [
     ]
 class FilterApplicationForm(forms.Form):
     status = forms.ChoiceField(choices=STATUS_CHOISE_2, label='Выберите статус', initial='All')
+
+
+class CreateRealizationForm(forms.ModelForm):
+    description = forms.CharField(widget=forms.Textarea(attrs={'rows': 10, 'cols': 40}), max_length=999,
+                                  label='Описание проекта')
+    class Meta:
+        model = Realization
+        fields = ['name','description','image']

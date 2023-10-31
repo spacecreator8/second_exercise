@@ -17,6 +17,7 @@
                 <div><a href="{% url 'loginSuccess' %}">Мои заявки</a></div>
                 {% if user.is_superuser %}
                     <div><a href="{% url 'apllication_processing' %}">Работа с заявками</a></div>
+                    <div><a href="{% url 'append_realization' %}">Добавить готовый проект</a></div>
                 {% endif %}
                 <div><a href="{% url 'logout' %}">Выйти</a></div>
             {% else %}

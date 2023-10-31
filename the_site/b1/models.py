@@ -34,7 +34,7 @@ class Application(models.Model):
     description = models.CharField(max_length=254, verbose_name='Описание', blank=False)
     category = models.ForeignKey('Category', on_delete=models.CASCADE, verbose_name='Категория желаемого стиля',
                                  blank=False)
-    photo = models.ImageField(max_length=254, verbose_name='Проект помещения', upload_to=get_name_file, blank=True,
+    photo = models.ImageField( verbose_name='Проект помещения', upload_to=get_name_file, blank=True, null=True,
                               validators=[FileExtensionValidator(allowed_extensions=['png', 'jpg', 'jpeg'])])
 
     STATUS_CHOISE = [
@@ -45,7 +45,7 @@ class Application(models.Model):
 
     status = models.CharField(max_length=254, verbose_name='Статус', choices=STATUS_CHOISE, default='New')
     date_creation = models.DateTimeField(auto_now_add=True, null=True)
-    username = models.CharField(max_length=254, verbose_name='Логин', blank=True, null=True)
+    username = models.CharField(max_length=254, verbose_name='Логин', blank=True, null=True, db_column='username_application')
     suggestions = models.ForeignKey('Realization', on_delete=models.CASCADE, verbose_name='Предложения реализации',
                                     blank=True, null=True)
 
@@ -62,8 +62,8 @@ class Category(models.Model):
 
 class Realization(models.Model):
     name = models.CharField(max_length=254, verbose_name='Название', blank=False,)
-    description = models.CharField(max_length=254, verbose_name='Описание', blank=False)
-    image = models.ImageField(max_length=254, upload_to=get_name_file, blank=True,
+    description = models.CharField(max_length=999,verbose_name='Описание', blank=False)
+    image = models.ImageField( upload_to=get_name_file, blank=True, null=True,
                               validators=[FileExtensionValidator(allowed_extensions=['png', 'jpg', 'jpeg'])])
     date_execution = models.DateTimeField(auto_now_add=True, null=True)
 

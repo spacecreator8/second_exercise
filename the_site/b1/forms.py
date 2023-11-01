@@ -85,18 +85,18 @@ class DoYouWantDel(forms.Form):
 
 
 STATUS_CHOISE = [
-        ('New', 'Новая'),
+        # ('New', 'Новая'),
         ('Accepted', 'Принято в работу'),
         ('Finished', 'Выполнено')
     ]
 
 class ApplProcessingForm(forms.ModelForm):
-    username = forms.CharField(max_length=50, disabled=True, label='Имя пользователя', required=False)
-    name = forms.CharField(max_length=50, disabled=True,label='Имя заявки')
-    category = forms.ModelChoiceField(queryset=Category.objects.all() ,disabled=True,label='Стиль оформления')
-    description = forms.CharField(widget= forms.Textarea(attrs={'rows': 10, 'cols': 40}),max_length=50, disabled=True,label='Описание, требования')
-    photo = forms.ImageField(disabled='True',label='Проект помещения', required=False)
-    status = forms.ChoiceField(choices=STATUS_CHOISE)
+    username = forms.CharField(max_length=50, disabled=True, label='Имя пользователя ', required=False)
+    name = forms.CharField(max_length=50, disabled=True,label='Имя заявки ')
+    category = forms.ModelChoiceField(queryset=Category.objects.all() ,disabled=True,label='Стиль оформления ')
+    description = forms.CharField(widget= forms.Textarea(attrs={'rows': 10, 'cols': 40}),max_length=50, disabled=True,label='Описание, требования ')
+    photo = forms.ImageField(disabled='True',label='Проект помещения ', required=True)
+    status = forms.ChoiceField(choices=STATUS_CHOISE, label='Изменить статус на ')
     class Meta:
         model = Application
         fields = ['username','name','category', 'description','photo','status','suggestions']
@@ -109,7 +109,7 @@ STATUS_CHOISE_2 = [
         ('All', 'Все заявки')
     ]
 class FilterApplicationForm(forms.Form):
-    status = forms.ChoiceField(choices=STATUS_CHOISE_2, label='Выберите статус', initial='All')
+    status = forms.ChoiceField(choices=STATUS_CHOISE_2, label='Отсортировать по статусу ', initial='All')
 
 
 class CreateRealizationForm(forms.ModelForm):

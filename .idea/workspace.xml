@@ -4,33 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c452aca5-9d63-4e30-b3a4-c8961a5e8245" name="Changes" comment="!!! Разобрался с отображением картинок, почему-то полетели имена юзеров в работе с заявками.">
+    <list default="true" id="c452aca5-9d63-4e30-b3a4-c8961a5e8245" name="Changes" comment="сделал отображение картинок, разобрался с валидацией">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/the_site/b1/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/the_site/b1/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/the_site/b1/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/the_site/b1/migrations/0002_user_application_category_realization_delete_advuser_and_more.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/the_site/b1/migrations/0003_alter_user_agreement_alter_user_applications.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/the_site/b1/migrations/0004_alter_application_suggestions.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/the_site/b1/migrations/0005_realization_name.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/the_site/b1/migrations/0006_alter_realization_name.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/the_site/b1/migrations/0007_realization_date_execution_user_date_execution_and_more.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/the_site/b1/migrations/0008_remove_user_date_execution_and_more.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/the_site/b1/migrations/0009_rename_date_execution_application_date_creation.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/the_site/b1/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/the_site/b1/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/the_site/b1/templates/registration/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/the_site/b1/templates/registration/registration.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/the_site/b1/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/the_site/b1/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/the_site/db.sqlite3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/the_site/files/23USP_Шалаш_Семена.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/the_site/files/Az33V_план_помещения2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/the_site/files/GfVGr_Скандинавский1.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/the_site/files/NB221_план_помещения2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/the_site/files/Osks0_Скандинавский1.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/the_site/files/Ps3ed_Шалаш_Семена.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/the_site/files/apKeN_план-помещения1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/the_site/files/cmTBd_Шалаш_Семена.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/the_site/files/fle9Y_Шалаш_Семена.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/the_site/files/n56hh_Шалаш_Семена.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/the_site/files/qlnK9_план-помещения1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/the_site/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/the_site/static/css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -254,7 +232,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698765564454</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="сделал отображение картинок, разобрался с валидацией">
+      <option name="closed" value="true" />
+      <created>1698819305465</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1698819305465</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -270,6 +256,7 @@
     <MESSAGE value="Сделал главную страницу, но фото не выводятся." />
     <MESSAGE value="Делаю помелочи,пытаюсь в валидацию." />
     <MESSAGE value="!!! Разобрался с отображением картинок, почему-то полетели имена юзеров в работе с заявками." />
-    <option name="LAST_COMMIT_MESSAGE" value="!!! Разобрался с отображением картинок, почему-то полетели имена юзеров в работе с заявками." />
+    <MESSAGE value="сделал отображение картинок, разобрался с валидацией" />
+    <option name="LAST_COMMIT_MESSAGE" value="сделал отображение картинок, разобрался с валидацией" />
   </component>
 </project>

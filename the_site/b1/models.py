@@ -38,13 +38,13 @@ class Application(models.Model):
     photo = models.ImageField( verbose_name='Проект помещения', upload_to=get_name_file, blank=True, null=True,
                               validators=[FileExtensionValidator(allowed_extensions=['png', 'jpg', 'jpeg'])])
 
-    STATUS_CHOISE = [
-        ('New', 'Новая'),
-        ('Accepted', 'Принято в работу'),
-        ('Finished', 'Выполнено')
-    ]
+    # STATUS_CHOISE = [
+    #     ('New', 'Новая'),
+    #     ('Accepted', 'Принято в работу'),
+    #     ('Finished', 'Выполнено')
+    # ]choices=STATUS_CHOISE
 
-    status = models.CharField(max_length=254, verbose_name='Статус', choices=STATUS_CHOISE, default='New')
+    status = models.CharField(max_length=254, verbose_name='Статус', default='New')
     date_creation = models.DateTimeField(auto_now_add=True, null=True)
     username = models.CharField(max_length=254, verbose_name='Логин', blank=True, null=True, db_column='username_application')
     suggestions = models.ForeignKey('Realization', on_delete=models.CASCADE, verbose_name='Предложения реализации',

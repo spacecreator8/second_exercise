@@ -1,14 +1,46 @@
 from django import forms
 from django.core.exceptions import ValidationError
+from django.utils.deconstruct import deconstructible
 
 from .models import *
 
 
+
+
 class RegistrationForm(forms.ModelForm):
     email = forms.EmailField()
+    agreement = forms.BooleanField(required=True, label='Согласие на обработку пресоональных данных')
     class Meta:
         model = User
-        fields = ['name','surname','patronymic','username','email','password','agreement']
+        fields = ['name','surname','patronymic','username','email','password','password2','agreement']
+        widgets = {
+            'name':forms.TextInput(attrs={ 'placeholder':'только кириллица'}),
+            'surname':forms.TextInput(attrs={ 'placeholder':'только кириллица'}),
+            'patronymic':forms.TextInput(attrs={ 'placeholder':'только кириллица'}),
+            'password': forms.PasswordInput(attrs={'name': 'password','type': 'password', 'autocomplete': 'off',}),
+            'password2': forms.PasswordInput(attrs={'name': 'password2','type': 'password', 'autocomplete': 'off', }),
+        }
+    def clean_name(self):
+        ALLOWED_CHARS='йцукенгшщзхъэждлорпавыфячсмитьбюёЁЙЦУКЕНГШЩЗХЪЭЖДЛОРПАВЫФЯЧСМИТЬБЮ'
+        name = self.cleaned_data['name']
+        if not(set(name)) <= set(ALLOWED_CHARS):
+            raise ValidationError("только кириллица")
+        return name
+
+    def clean_surname(self):
+        ALLOWED_CHARS='йцукенгшщзхъэждлорпавыфячсмитьбюёЁЙЦУКЕНГШЩЗХЪЭЖДЛОРПАВЫФЯЧСМИТЬБЮ'
+        surname = self.cleaned_data['surname']
+        if not(set(surname))<= set(ALLOWED_CHARS):
+            raise ValidationError("только кириллица")
+        return surname
+
+    def clean_patronymic(self):
+        ALLOWED_CHARS='йцукенгшщзхъэждлорпавыфячсмитьбюёЁЙЦУКЕНГШЩЗХЪЭЖДЛОРПАВЫФЯЧСМИТЬБЮ'
+        patronymic = self.cleaned_data['patronymic']
+        if not(set(patronymic)) <= set(ALLOWED_CHARS):
+            raise ValidationError("только кириллица")
+        return patronymic
+
 
     # def clean_name(self):
     #     name = self.cleaned_data

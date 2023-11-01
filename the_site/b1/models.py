@@ -11,8 +11,9 @@ class User(AbstractUser):
     username = models.CharField(max_length=254, verbose_name='Логин', unique=True, blank=False)
     email = models.CharField(max_length=254, verbose_name='Почта', unique=True, blank=False)
     password = models.CharField(max_length=254, verbose_name='Пароль', blank=False)
-    agreement = models.BooleanField(verbose_name='Согласие на обработку персоональных данных', blank=False,
-                                    default=True)
+    password2 = models.CharField(max_length=254, verbose_name='Повторите пароль', blank=False)
+    agreement = models.BooleanField(verbose_name='Согласие на обработку персоональных данных', blank=True,
+                                    null=True)
     applications = models.ForeignKey('Application', on_delete=models.CASCADE, verbose_name='Заявки', null=True,
                                      related_name='user', blank=True)
 

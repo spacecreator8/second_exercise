@@ -26,11 +26,17 @@ def registrationView(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
         if form.is_valid():
-            new_user = form.save(commit=False)
-            new_user.set_password(form.cleaned_data['password'])
-            new_user = form.save()
-            login(request, new_user)
-            return render(request, 'registration/reg_success.html')
+            if form.cleaned_data['password'] == form.cleaned_data['password2']:
+                new_user = form.save(commit=False)
+                new_user.set_password(form.cleaned_data['password'])
+                new_user.password2 = 'NULL'
+                new_user = form.save()
+                login(request, new_user)
+                return render(request, 'registration/reg_success.html')
+        else:
+            return render(request, 'registration/registration.html',{'form': form})
+
+
     else:
         form = RegistrationForm()
         return render(request, 'registration/registration.html', {'form': form})
